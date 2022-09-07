@@ -27,18 +27,19 @@ class GDSEButton extends Component {
         type: "button"
     }
 
-    handleButtonClick = (event) => {
-        const {onClick, disabled} = this.props;
-
-        if(disabled) return;
-         
-        onClick && onClick({event});
-    }
-
     renderChildren = (label, children) => {
         if(label) return label;
         if(children)  return children;
     }
+
+    handleButtonClick = (event) => {
+        const {onClick, disabled} = this.props;
+
+        if(disabled) return;
+
+        onClick && onClick({event});
+    }
+
 
     render() {
         const {
